@@ -7,7 +7,7 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
   %body
     %nav.header
       %a.header__logo{href: ""} 家計簿
@@ -17,5 +17,5 @@
         %li
           %a{href: ""} Edit
         %li
-          %a{href: ""} 入力する
+          = link_to '入力する', 'posts/new'
     = yield

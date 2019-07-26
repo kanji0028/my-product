@@ -2,8 +2,6 @@
   %h2 入力フォーム
   = form_for @post do |f|
     .form-group
-      .form-group__price
-        = f.text_field :price, placeholder: "金額", class: "form-price"
       .form-group__category
         %label
           = f.radio_button :category, "食費" , class: "form-category"
@@ -29,16 +27,21 @@
         %label
           = f.radio_button :category, "その他" , class: "form-category"
           その他
+      .form-group__price
+        = f.text_field :price, placeholder: "金額", class: "form-price"
       .form-group__mental
         %label
+          %i.material-icons.large-size.blue sentiment_very_satisfied
+          満足
           = f.radio_button :mental, "Good"
-          Good
         %label
+          %i.material-icons.large-size.green sentiment_neutral
+          必要
           = f.radio_button :mental, "Normal"
-          Normal
         %label
+          %i.material-icons.large-size.red sentiment_very_dissatisfied
+          不本意
           = f.radio_button :mental, "Bad"
-          Bad
       .form-group__memo
         = f.text_area :memo, placeholder: "メモ"
       = f.submit "送信", class: "btn btn-primary withripple"
