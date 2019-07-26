@@ -3,13 +3,17 @@
     .title.person 自分の支出
     .posts
       .post
+      = @posts.each do |post|
         .post__element.icon
           %i.material-icons.large-size directions_bus
+          -# = post.category
         .post__element.pay
-          = @posts
+          = post.price
         .post__element.face
           %i.material-icons.large-size.blue sentiment_very_satisfied
-        .post__element.date 2019/07/27
+          -# = post.mental
+        .post__element.date
+          = post.created_at.strftime("%Y-%m-%d %H:%M")
   -#     .post
   -#       .post__element.icon
   -#         %i.material-icons.large-size restaurant

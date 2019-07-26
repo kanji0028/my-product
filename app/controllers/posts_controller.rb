@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = "あああ"
+    @posts = Post.all
   end
 
   def new

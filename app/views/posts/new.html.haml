@@ -1,0 +1,44 @@
+.post-form
+  %h2 入力フォーム
+  = form_for @post do |f|
+    .form-group
+      .form-group__price
+        = f.text_field :price, placeholder: "金額", class: "form-price"
+      .form-group__category
+        %label
+          = f.radio_button :category, "食費" , class: "form-category"
+          食費
+        %label
+          = f.radio_button :category, "日用品" , class: "form-category"
+          日用品
+        %label
+          = f.radio_button :category, "交通費" , class: "form-category"
+          交通費
+        %label
+          = f.radio_button :category, "書籍" , class: "form-category"
+          書籍
+        %label
+          = f.radio_button :category, "ファッション" , class: "form-category"
+          ファッション
+        %label
+          = f.radio_button :category, "趣味・娯楽" , class: "form-category"
+          趣味・娯楽
+        %label
+          = f.radio_button :category, "カード支払" , class: "form-category"
+          カード支払
+        %label
+          = f.radio_button :category, "その他" , class: "form-category"
+          その他
+      .form-group__mental
+        %label
+          = f.radio_button :mental, "Good"
+          Good
+        %label
+          = f.radio_button :mental, "Normal"
+          Normal
+        %label
+          = f.radio_button :mental, "Bad"
+          Bad
+      .form-group__memo
+        = f.text_area :memo, placeholder: "メモ"
+      = f.submit "送信", class: "btn btn-primary withripple"
