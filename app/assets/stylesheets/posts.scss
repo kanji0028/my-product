@@ -68,3 +68,28 @@ li a{
     padding-top: 10px;
   }
 }
+.posts{
+  width: 95%;
+  height: 600px;
+  background-color: white;
+  margin: 5px auto;
+  overflow: scroll;
+  .post{
+    width: 46%;
+    height: 150px;
+    background-color:whitesmoke;
+    float: left;
+    margin: 8px;
+    text-align: center;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    &__element{
+      float: left;
+      height: 50%;
+      width: 45%;
+      line-height: 70px;
+    }
+  }
+}
+.pay{
+  font-size: 25px;
+}
