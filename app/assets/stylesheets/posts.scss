@@ -1,3 +1,70 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+}
+
+.header{
+  width: 100%;
+  height: 60px;
+  background-color: yellow;
+  z-index: 1;
+  position: fixed;
+  &__logo{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 60px;
+    text-decoration: none;
+    float: left;
+    margin-left: 20px;
+
+  }
+  &__list{
+    list-style: none;
+    font-size: 18px;
+    li{
+      float: right;
+      padding:15px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.content{
+  width: 100%;
+  height: 1000px;
+  .left{
+    width: 33%;
+    height: 800px;
+    float: left;
+    background-color: beige;
+    margin-top: 60px;
+  }
+  .center{
+    width: 33%;
+    height: 800px;
+    float: left;
+    background-color: cadetblue;
+    margin-top: 60px;
+  }
+  .right{
+    width: 34%;
+    height: 800px;
+    float: left;
+    background-color: gold;
+    margin-top: 60px;
+  }
+  .title{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
