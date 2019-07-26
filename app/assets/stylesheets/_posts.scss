@@ -74,9 +74,16 @@
     &__element{
       float: left;
       height: 50%;
-      width: 45%;
       line-height: 100px;
+      &.amount{
+        width: 30px;
+        font-size: 20px;
+      }
+      &.pay{
+        font-size: 20px;
+      }
       &.date{
+        padding-left:16px;
         color: gray;
         font-size:15px;
       }

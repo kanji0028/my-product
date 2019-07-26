@@ -6,51 +6,51 @@
         %label
           %i.material-icons.large-size restaurant
           食費
-          = f.radio_button :category, "食費" , class: "form-category"
+          = f.radio_button :category, "restaurant" , class: "form-category" 
         %label
           %i.material-icons.large-size shopping_cart
           日用品
-          = f.radio_button :category, "日用品" , class: "form-category"
+          = f.radio_button :category, "shopping_cart" , class: "form-category"
         %label
           %i.material-icons.large-size train
           交通費
-          = f.radio_button :category, "交通費" , class: "form-category"
+          = f.radio_button :category, "train" , class: "form-category"
         %label
           %i.material-icons.large-size import_contacts
           書籍
-          = f.radio_button :category, "書籍" , class: "form-category"
+          = f.radio_button :category, "import_contacts" , class: "form-category"
         %br 
         %label
           %i.material-icons.large-size card_travel
           ファッション
-          = f.radio_button :category, "ファッション" , class: "form-category"
+          = f.radio_button :category, "card_travel" , class: "form-category"
         %label
           %i.material-icons.large-size directions_bike
           趣味・娯楽
-          = f.radio_button :category, "趣味・娯楽" , class: "form-category"
+          = f.radio_button :category, "directions_bike" , class: "form-category"
         %label
           %i.material-icons.large-size payment
           カード支払
-          = f.radio_button :category, "カード支払" , class: "form-category"
+          = f.radio_button :category, "payment" , class: "form-category"
         %label
           %i.material-icons.large-size star
           その他
-          = f.radio_button :category, "その他" , class: "form-category"
+          = f.radio_button :category, "star" , class: "form-category"
       .form-group__price
-        = f.text_field :price, placeholder: "金額", class: "form-price"
+        = f.text_field :price, placeholder: "金額", class: "form-price",size: "30"
       .form-group__mental
         %label
           %i.material-icons.large-size.blue sentiment_very_satisfied
           満足
-          = f.radio_button :mental, "Good"
+          = f.radio_button :mental, "sentiment_very_satisfied",class: ".blue"
         %label
           %i.material-icons.large-size.green sentiment_neutral
           必要
-          = f.radio_button :mental, "Normal"
+          = f.radio_button :mental, "sentiment_neutral"
         %label
-          %i.material-icons.large-size.red sentiment_very_dissatisfied
+          %i.material-icons.large-size.red sentiment_very_dissatisfied  
           不本意
-          = f.radio_button :mental, "Bad"
+          = f.radio_button :mental, "sentiment_very_dissatisfied" 
       .form-group__memo
         = f.text_area :memo, placeholder: "メモ" ,size: "30x3"
       = f.submit "送信", class: "btn btn-primary withripple"
