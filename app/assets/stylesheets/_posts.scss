@@ -1,21 +1,24 @@
 .header{
   width: 100%;
   height: 60px;
-  background-color: yellow;
+  background-color: #E67A7A;
   z-index: 1;
   position: fixed;
   &__logo{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     line-height: 60px;
     text-decoration: none;
     float: left;
     margin-left: 20px;
-
+    color: white;
+    letter-spacing: 0.1em;
   }
   &__list{
     list-style: none;
     font-size: 18px;
+    color: white;
+    
     li{
       float: right;
       padding:15px;
@@ -31,21 +34,21 @@
     width: 33%;
     height: 800px;
     float: left;
-    background-color: beige;
+    background-color:#7EC2C2;
     margin-top: 60px;
   }
   .center{
     width: 33%;
     height: 800px;
     float: left;
-    background-color: cadetblue;
+    background-color: #9DDCDC;
     margin-top: 60px;
   }
   .right{
     width: 34%;
     height: 800px;
     float: left;
-    background-color: gold;
+    background-color: #FFF4E1;
     margin-top: 60px;
   }
   .title{
@@ -72,10 +75,27 @@
       float: left;
       height: 50%;
       width: 45%;
-      line-height: 70px;
+      line-height: 100px;
+      &.date{
+        color: gray;
+      }
     }
   }
 }
+.material-icons.large-size{
+  font-size:50px;
+  margin:15px;
+}
+.material-icons.large-size.blue{
+  color: blue;
+}
+.material-icons.large-size.green{
+  color: rgb(73, 179, 47);
+}
+.material-icons.large-size.red{
+  color: rgba(241, 4, 44, 0.863);
+}
+
 .pay{
   font-size: 25px;
 }
