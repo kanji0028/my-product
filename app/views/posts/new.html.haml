@@ -4,29 +4,38 @@
     .form-group
       .form-group__category
         %label
-          = f.radio_button :category, "食費" , class: "form-category"
+          %i.material-icons.large-size restaurant
           食費
+          = f.radio_button :category, "食費" , class: "form-category"
         %label
-          = f.radio_button :category, "日用品" , class: "form-category"
+          %i.material-icons.large-size shopping_cart
           日用品
+          = f.radio_button :category, "日用品" , class: "form-category"
         %label
-          = f.radio_button :category, "交通費" , class: "form-category"
+          %i.material-icons.large-size train
           交通費
+          = f.radio_button :category, "交通費" , class: "form-category"
         %label
-          = f.radio_button :category, "書籍" , class: "form-category"
+          %i.material-icons.large-size import_contacts
           書籍
+          = f.radio_button :category, "書籍" , class: "form-category"
+        %br 
         %label
-          = f.radio_button :category, "ファッション" , class: "form-category"
+          %i.material-icons.large-size card_travel
           ファッション
+          = f.radio_button :category, "ファッション" , class: "form-category"
         %label
-          = f.radio_button :category, "趣味・娯楽" , class: "form-category"
+          %i.material-icons.large-size directions_bike
           趣味・娯楽
+          = f.radio_button :category, "趣味・娯楽" , class: "form-category"
         %label
-          = f.radio_button :category, "カード支払" , class: "form-category"
+          %i.material-icons.large-size payment
           カード支払
+          = f.radio_button :category, "カード支払" , class: "form-category"
         %label
-          = f.radio_button :category, "その他" , class: "form-category"
+          %i.material-icons.large-size star
           その他
+          = f.radio_button :category, "その他" , class: "form-category"
       .form-group__price
         = f.text_field :price, placeholder: "金額", class: "form-price"
       .form-group__mental
@@ -43,5 +52,5 @@
           不本意
           = f.radio_button :mental, "Bad"
       .form-group__memo
-        = f.text_area :memo, placeholder: "メモ"
+        = f.text_area :memo, placeholder: "メモ" ,size: "30x3"
       = f.submit "送信", class: "btn btn-primary withripple"
