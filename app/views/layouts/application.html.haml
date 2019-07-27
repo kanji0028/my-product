@@ -17,6 +17,8 @@
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li
             %a.post{:href => "/posts/new"} 投稿する
+          %li
+            %a.post{:href => "/users/#{current_user.id}"} マイページ
         - else
           %li
             = link_to "ログイン", new_user_session_path, class: 'post'

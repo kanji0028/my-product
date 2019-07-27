@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(price:post_params[:price], category:post_params[:category], mental:post_params[:mental], memo:post_params[:memo])
+    Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
     redirect_to controller: :posts, action: :index
   end
 
