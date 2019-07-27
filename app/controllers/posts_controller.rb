@@ -3,9 +3,9 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: :index
   
   def index
-    @posts = Post.order("created_at DESC")
-    @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
+    @posts  = current_user.posts.includes(:user).order("created_at DESC") 
     @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @sum = Post.where(user_id: current_user.id).sum(:price)
   end
 
   def new
