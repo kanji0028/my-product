@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.order("created_at DESC")
-    @my_posts  = current_user.posts.order("created_at DESC") 
-    @other_posts  = Post.where.not(user_id: current_user.id).order("created_at DESC")
+    @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
+    @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
   def new
@@ -15,6 +15,11 @@ class PostsController < ApplicationController
   def create
     Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
     redirect_to controller: :posts, action: :index
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy if post.user_id == current_user.id
   end
 
   private
