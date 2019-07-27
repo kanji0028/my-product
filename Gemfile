@@ -67,3 +67,4 @@ gem 'sprockets', '3.7.2'
 gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'devise'
+gem "jquery-rails"
