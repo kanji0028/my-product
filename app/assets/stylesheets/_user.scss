@@ -1,0 +1,27 @@
+.account-page__inner.clearfix{
+  padding-top: 150px;
+  text-align: center;
+}
+h2 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 200;
+}
+.field {
+  margin-bottom: 15px;
+
+  .field-label{
+    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+
+    i {
+      font-size: 11px;
+    }
+  }
+}
+
+.btn{
+  height: 100px;
+}

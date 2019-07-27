@@ -1,58 +1,47 @@
 .content
   .left
-    .title.person 自分の支出
+    .title.person
+      = current_user.name
+      の支出
     .posts
-      .post
-        .post__element.icon
-          %i.material-icons.large-size directions_bus
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.blue sentiment_very_satisfied
-        .post__element.date 2019/07/27
-      .post
-        .post__element.icon
-          %i.material-icons.large-size restaurant
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.green sentiment_neutral
-        .post__element.date 2019/07/27
-      .post
-        .post__element.icon
-          %i.material-icons.large-size smoking_rooms
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.blue sentiment_very_satisfied
-        .post__element.date 2019/07/27
-      .post
-        .post__element.icon
-          %i.material-icons.large-size content_cut
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.green sentiment_neutral
-        .post__element.date 2019/07/27
+      - @my_posts.each do |post|
+        .post
+          .post__top= post.user.name
+          .post__element.icon
+            %i.material-icons.large-size
+              =post.category
+          .post__element.amount¥
+          .post__element.pay
+            = post.price.to_s(:delimited)
+          .post__element.face
+            %i.material-icons.large-size
+              =post.mental
+          .post__element.date= post.created_at.strftime("%F")
+
+
   .center
     .title.all みんなの支出
     .posts
-      .post
-        .post__element.icon
-          %i.material-icons.large-size local_hospital
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.red sentiment_very_dissatisfied
-        .post__element.date 2019/07/27
-      .post
-        .post__element.icon
-          %i.material-icons.large-size call
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.blue sentiment_very_satisfied
-        .post__element.date 2019/07/27
-  .right
-    .title.detail 詳細
-    .posts
-      .this-month
-        今月の出費
-        .this-month__yen
-          ¥
-          .this-month__costs 10,000
-      .line
+      - @other_posts.each do |post|
+        .post
+          .post__top= post.user.name
+          .post__element.icon
+            %i.material-icons.large-size
+              =post.category
+          .post__element.amount¥
+          .post__element.pay
+            = post.price.to_s(:delimited)
+          .post__element.face
+            %i.material-icons.large-size
+              =post.mental
+          .post__element.date= post.created_at.strftime("%F")
+
+  -# .right
+  -#   .title.detail 詳細
+  -#   .posts
+  -#     .this-month
+  -#       今月の出費
+  -#       .this-month__yen
+  -#         ¥
+  -#         .this-month__costs 10,000
+  -#     .line
