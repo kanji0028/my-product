@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get   'posts/new' => 'posts#new'     #新規入力画面
   post  'posts'     => 'posts#create'  #新規入力機能
   delete  'posts/:id'   => 'posts#destroy'
+  patch  'posts/:id/'   => 'posts#update'
+  get  'posts/:id/edit'   => 'posts#edit'
   get   'users/:id' => 'users#show'    #個人の家計簿閲覧
 end

@@ -7,7 +7,9 @@
       - @posts.each do |post|
         -# - if user_signed_in? && current_user.id == post.user_id
         .post
-          .post__top= current_user.name= link_to "削除","/posts/#{post.id}", method: :delete
+          .post__top 
+            .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn"
           .post__element.icon
             %i.material-icons.large-size
               =post.category
