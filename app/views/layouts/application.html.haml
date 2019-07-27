@@ -12,10 +12,14 @@
     %nav.header
       %a.header__logo{href: ""} 家計簿
       %ul.header__list
-        %li
-          %a{href: ""} ログイン
-        %li
-          %a{href: ""} Edit
-        %li
-          = link_to '入力する', 'posts/new'
+        - if user_signed_in?
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li
+            %a.post{:href => "/posts/new"} 投稿する
+        - else
+          %li
+            = link_to "ログイン", new_user_session_path, class: 'post'
+          %li
+            = link_to "新規登録", new_user_registration_path, class: 'post'
     = yield
