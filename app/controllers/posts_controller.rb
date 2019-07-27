@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.order("created_at DESC")
+    @my_posts  = current_user.posts.order("created_at DESC") 
+    @other_posts  = Post.where.not(user_id: current_user.id).order("created_at DESC")
   end
 
   def new

@@ -2,10 +2,11 @@
   .left
     .title.person
       = current_user.name
-      さんの支出
+      の支出
     .posts
       - @posts.each do |post|
         .post
+          .post__top= current_user.name
           .post__element.icon
             %i.material-icons.large-size
               =post.category
@@ -16,21 +17,3 @@
             %i.material-icons.large-size
               =post.mental
           .post__element.date= post.created_at.strftime("%F")
-
-  .center
-    .title.all みんなの支出
-    .posts
-      .post
-        .post__element.icon
-          %i.material-icons.large-size local_hospital
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.red sentiment_very_dissatisfied
-        .post__element.date 2019/07/27
-      .post
-        .post__element.icon
-          %i.material-icons.large-size call
-        .post__element.pay ¥1,000
-        .post__element.face
-          %i.material-icons.large-size.blue sentiment_very_satisfied
-        .post__element.date 2019/07/27
