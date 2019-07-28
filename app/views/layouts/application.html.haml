@@ -10,7 +10,14 @@
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
   %body
     %nav.header
-      %a.header__logo{href: "/posts"} 家計簿
+      %a.header__logo{href: "/posts"} みんなの家計簿
+      %a.header__logo
+        .material-icons.top-page live_help
+      #overlay
+      #modalWindow
+        %p 「Close」をクリックすると、オーレ―バイ/モーダルウィンドウを非表示にします。
+        %button#close Close
+
       %ul.header__list
         - if user_signed_in?
           %li

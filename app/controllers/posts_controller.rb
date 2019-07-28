@@ -3,15 +3,13 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: :index
   
   def index
-    @posts  = current_user.posts.includes(:user).order("created_at DESC") 
+    @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
     @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
     @sum = Post.where(user_id: current_user.id).sum(:price)
 
     @pie_chart = Post.where(user_id: current_user.id).group(:category).sum(:price)
     @line_chart = Post.where(user_id: current_user.id).group(:created_at).count
 
-    @labels = Post.group(:category)
-    @datas = Post.sum(:price)
   end
 
   def new
