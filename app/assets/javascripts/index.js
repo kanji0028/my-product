@@ -1,7 +1,14 @@
 $(function() {
-  $(".material-icons").on("mouseover mouseout",function(){
-    $(this).toggleClass("red");
+
+  $("i:contains('restaurant')").on("mouseover mouseout",function(){
+    $(this).replaceWith("red");
   });
+
+  $("i:contains('sentiment_very_satisfied')").addClass("blue");
+  $("i:contains('sentiment_neutral')").addClass("green");
+  $("i:contains('sentiment_very_dissatisfied')").addClass("red");
+
+});
 
 //   var ctx = document.getElementById("myChart").getContext('2d');
 //   var myChart = new Chart(ctx, {
@@ -46,7 +53,6 @@ $(function() {
 //     plugins: labelplugin,
 //   });
 
-// });
 
 
 
