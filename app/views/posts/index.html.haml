@@ -49,3 +49,8 @@
           ¥
           .this-month__costs=@sum.to_s(:delimited)
       .line
+
+  .footer
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)

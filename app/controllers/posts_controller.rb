@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
+    flash[:notice] = 'メッセージが送信されました'
     redirect_to controller: :posts, action: :index
   end
 
