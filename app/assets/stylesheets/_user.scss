@@ -1,14 +1,28 @@
 .account-page__inner.clearfix{
   padding-top: 150px;
   text-align: center;
-}
-h2 {
-    margin-bottom: 10px;
-    font-size: 40px;
-    font-weight: 200;
+  h2 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: 200;
+  }
 }
 .field {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  font-size:15px;
+
+  .input{
+    width:200px;
+    text-align: center;
+    background-color: antiquewhite;
+  }
+  .avatar{
+    width:300px;
+    text-align: center;
+    background-color: antiquewhite;
+    height: 30px;
+    padding-top: 15px;
+  }
 
   .field-label{
     padding: 10px 0;
@@ -19,6 +33,13 @@ h2 {
     i {
       font-size: 11px;
     }
+  }
+}
+.actions{
+  margin-bottom: 30px;
+  font-size: 30px;
+  .createuser{
+    height: 40px;
   }
 }
 

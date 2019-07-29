@@ -37,10 +37,12 @@
         - if user_signed_in?
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete
-          %li
-            %a.post{href: "/posts/new"} 入力する
+          %li.header__list--avatar
+            %a.image=image_tag current_user.avatar,size: "50x50"
           %li
             %a.post{href: "/users/#{current_user.id}"} マイページ
+          %li
+            %a.post{href: "/posts/new"} 入力する
         - else
           %li
             = link_to "ログイン", new_user_session_path, class: 'post'

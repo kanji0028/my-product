@@ -71,3 +71,4 @@ gem "jquery-rails"
 gem "chartkick"
 gem 'chartable'
 gem 'chart-js-rails', '~> 0.1.4'
+gem 'mini_magick'
