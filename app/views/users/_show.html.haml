@@ -4,12 +4,12 @@
       = current_user.name
       の支出
     .posts
-      - @posts.each do |post|
-        -# - if user_signed_in? && current_user.id == post.user_id
+      - @my_posts.each do |post|
         .post
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
-            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn"
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
+
           .post__element.icon
             %i.material-icons.large-size
               =post.category
@@ -22,6 +22,3 @@
           .post__element.date= post.created_at.strftime("%F")
 
   .my-detail
-
-    -# %canvas#myChart{:height => "200", :width => "600"}
-    -# %canvas#myChart1{:height => "200", :width => "600"}
