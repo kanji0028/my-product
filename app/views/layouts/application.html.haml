@@ -10,7 +10,29 @@
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
   %body
     %nav.header
-      %a.header__logo{href: "/posts"} 家計簿
+      %a.header__logo{href: "/posts"} みんなの家計簿
+      %a.header__logo.help
+        .material-icons.top-page live_help
+      #overlay
+      #modalWindow
+        %p.modal--title みんなの家計簿とは？
+        %p.modal--content 支出と気持ちを共有する、エモーショナルな家計簿アプリです。
+        %p.modal--content その買い物に？
+        .modalWindow-category
+          %i.modal.material-icons.large-size restaurant
+          %i.modal.material-icons.large-size shopping_cart
+          %i.modal.material-icons.large-size train
+          %i.modal.material-icons.large-size import_contacts
+          %i.modal.material-icons.large-size card_travel
+          %i.modal.material-icons.large-size directions_bike
+          %i.modal.material-icons.large-size payment
+        %p.modal--content 満足ですか？
+        .modalWindow-icon
+          %i.modal.material-icons.large-size.blue sentiment_very_satisfied
+          %i.modal.material-icons.large-size.green sentiment_neutral
+          %i.modal.material-icons.large-size.red sentiment_very_dissatisfied  
+        %button#close Close
+
       %ul.header__list
         - if user_signed_in?
           %li

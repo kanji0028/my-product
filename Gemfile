@@ -67,3 +67,7 @@ gem 'sprockets', '3.7.2'
 gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'devise'
+gem "jquery-rails"
+gem "chartkick"
+gem 'chartable'
+gem 'chart-js-rails', '~> 0.1.4'

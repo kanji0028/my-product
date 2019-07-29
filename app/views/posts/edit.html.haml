@@ -1,6 +1,6 @@
 .post-form
   %h2 入力フォーム
-  = form_for @posts, url: posts_new_path(@posts), html: {method: "patch"} do |f|
+  = form_for @post do |f|
     .form-group
       .form-group__category
         %label
