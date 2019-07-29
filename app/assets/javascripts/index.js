@@ -33,3 +33,11 @@ $(function() {
     }
 
 });
+
+$(function(){
+  $(".notice").hide().fadeIn(1000);
+});
+
+$(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 3000);
+});
