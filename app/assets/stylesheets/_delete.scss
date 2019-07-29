@@ -38,3 +38,12 @@ button:hover {
   background: #D04255;
   color: #FFF;
 }
+
+@keyframes modal{
+  0% {top:-100%}
+  100% {top:50%}
+}
+@keyframes modalClose {
+  0% {top:50%}
+  100% {top:100%}
+}
