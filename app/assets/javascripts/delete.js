@@ -1,12 +1,11 @@
 $(function() {
 
-  $('.fa-plus').each(function() {  
-  $(this).on('click', function() {
+  $('.fa-plus').on('click', function() {
     $(this).siblings().fadeIn();
-    // $('#overlay1, #modalWindow1').fadeIn();
-  });
+    $('#overlay1, #modalWindow1').fadeIn();
   });
 
+  
   $('.fa-plus').on('click', function() {
     $('#overlay1, #modalWindow1').fadeOut();
   });
@@ -26,5 +25,4 @@ $(function() {
       'top': ((h - ch) / 2) + 'px'
     });
   }
-
 });
