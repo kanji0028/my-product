@@ -22,7 +22,7 @@
           .post__element.date= post.created_at.strftime("%F")
 
   .my-detail
-    .pie_chart=pie_chart @data_category , width: "800px", height: "300px"
+    .pie_chart=pie_chart @data_category , width: "800px", height: "300px", thousands: ","
     
     .line
     
@@ -31,26 +31,26 @@
     -# =bar_chart @data_day, width: "800px", height: "300px"
 
 
-    -# %canvas#myChart{:height => "400", :width => "900"}
-    -# :javascript
-    -#   var ctx = document.getElementById("myChart").getContext('2d');
-    -#   var myChart = new Chart(ctx, {
-    -#       type: 'bar',
-    -#       data: {
-    -#           labels: ["値段"],
-    -#           datasets: [{
-    -#               label: "サンプル",
-    -#               data: [ 10000 ],
-    -#               backgroundColor: 'rgba(255, 99, 132, 1.0)',
-    -#               borderColor: 'rgba(255, 50, 132, 1.0)',
-    -#               fill: false
-    -#           }]
-    -#       },
-    -#       options: {
-    -#           title:  {
-    -#             display: true,
-    -#             text: "タイトル"
-    -#           }
-    -#       }
-    -#   });
+    %canvas#myChart{:height => "400", :width => "900"}
+    :javascript
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["値段","値段","値段","値段"],
+              datasets: [{
+                  label: "サンプル",
+                  data: [ 10000,20000,13000,20000 ],
+                  backgroundColor: 'rgba(255, 99, 132, 1.0)',
+                  borderColor: 'rgba(255, 50, 132, 1.0)',
+                  fill: false
+              }]
+          },
+          options: {
+              title:  {
+                display: true,
+                text: "タイトル"
+              }
+          }
+      });
 
