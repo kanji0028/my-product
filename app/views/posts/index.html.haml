@@ -49,7 +49,51 @@
           ¥
           .this-month__costs=@sum.to_s(:delimited)
       .line
-      .this-month__costs=@sum.to_s(:delimited)
+      .details
+        .details--material
+          %i.material-icons.large-size.icon restaurant
+          .details--material--font 食費
+          .details--material--price="¥"+@food.to_s(:delimited)
+          
+
+        .details--material
+          %i.material-icons.large-size shopping_cart
+          .details--material--font 日用品
+          .details--material--price="¥"+@cart.to_s(:delimited)
+
+
+      .details
+        .details--material
+          %i.material-icons.large-size train
+          .details--material--font 交通費
+          .details--material--price="¥"+@train.to_s(:delimited)
+
+        .details--material
+          %i.material-icons.large-size import_contacts
+          .details--material--font 書籍
+          .details--material--price="¥"+@import_contacts.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size card_travel
+          .details--material--font ファッション
+          .details--material--price="¥"+@card_travel.to_s(:delimited)
+
+        .details--material 
+          %i.material-icons.large-size directions_bike
+          .details--material--font 趣味・娯楽
+          .details--material--price="¥"+@bikes.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size payment
+          .details--material--font カード支払
+          .details--material--price="¥"+@payment.to_s(:delimited)
+
+        .details--material  
+          %i.material-icons.large-size star
+          .details--material--font その他
+          .details--material--price="¥"+@star.to_s(:delimited)
 
   .footer
     .notifications

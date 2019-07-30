@@ -5,9 +5,17 @@ class PostsController < ApplicationController
   def index
     @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
     @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
-    @sum = Post.where(user_id: current_user.id).sum(:price)
-    @food = Post.where(user_id: current_user.id).order("restaurant").sum(:price)
 
+    
+    @sum = Post.where(user_id: current_user.id).sum(:price)
+    @food = Post.where(user_id: current_user.id).where(category: 'restaurant').sum(:price)
+    @cart = Post.where(user_id: current_user.id).where(category: 'shopping_cart').sum(:price)
+    @train = Post.where(user_id: current_user.id).where(category: 'train').sum(:price)
+    @import_contacts = Post.where(user_id: current_user.id).where(category: 'import_contacts').sum(:price)
+    @card_travel = Post.where(user_id: current_user.id).where(category: 'card_travel').sum(:price)
+    @bikes = Post.where(user_id: current_user.id).where(category: 'directions_bike').sum(:price)
+    @payment = Post.where(user_id: current_user.id).where(category: 'payment').sum(:price)
+    @star = Post.where(user_id: current_user.id).where(category: 'star').sum(:price)
     @pie_chart = Post.where(user_id: current_user.id).group(:category).sum(:price)
     @line_chart = Post.where(user_id: current_user.id).group(:created_at).count
 

@@ -7,7 +7,11 @@ class UsersController < ApplicationController
     @categorys  = Post.where(user_id: current_user.id).group(:created_at).count
     
     @data_category = Post.where(user_id: current_user.id).group("category").sum(:price)
+
+
+    
     @data_mental = Post.where(user_id: current_user.id).group("mental").count
+    
     @data_day = Post.where(user_id: current_user.id).group("created_at").count
 
   end
