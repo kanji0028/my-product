@@ -1,12 +1,13 @@
 $(function() {
 
-  
-  $('.fa-plus').on('click', function() {
+  $('.fa-plus').each(function() {  
+  $(this).on('click', function() {
     $(this).siblings().fadeIn();
-      // $('#overlay1, #modalWindow1').fadeIn();
+    // $('#overlay1, #modalWindow1').fadeIn();
+  });
   });
 
-  $('#close1').on('click', function() {
+  $('.fa-plus').on('click', function() {
     $('#overlay1, #modalWindow1').fadeOut();
   });
 

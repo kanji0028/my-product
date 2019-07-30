@@ -31,7 +31,7 @@
     .posts
       - @other_posts.each do |post|
         .post
-          .post__top--other= post.user.name
+          .post__top--other= post.user&.name
           .post__element.icon
             %i.material-icons.large-size=post.category
           .post__element.amount¥
