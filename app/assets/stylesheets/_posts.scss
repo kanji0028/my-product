@@ -268,3 +268,15 @@
   }
   }  
 }
+.dropdown{
+  // display: none;
+  color: black;
+  display: flex;
+  padding:0 10px;
+  margin-right:10px; 
+  background-color:rgba(252, 252, 252, 0.625);
+  text-align: center;
+  border-radius:10px;
+  float: left;
+  font:20px;
+}

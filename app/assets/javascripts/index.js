@@ -3,7 +3,7 @@ $(function() {
   $("i:contains('sentiment_very_satisfied')").addClass("blue");
   $("i:contains('sentiment_neutral')").addClass("green");
   $("i:contains('sentiment_very_dissatisfied')").addClass("red");
-
+  
     $('.header__logo.help').on('click', function() {
       $('#overlay, #modalWindow').fadeIn();
     });

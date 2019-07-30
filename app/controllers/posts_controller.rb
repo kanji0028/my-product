@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
     @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
 
-    
+
     @sum = Post.where(user_id: current_user.id).sum(:price)
     @food = Post.where(user_id: current_user.id).where(category: 'restaurant').sum(:price)
     @cart = Post.where(user_id: current_user.id).where(category: 'shopping_cart').sum(:price)

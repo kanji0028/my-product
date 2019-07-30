@@ -4,8 +4,7 @@ $(function() {
     $(this).siblings().fadeIn();
     $('#overlay1, #modalWindow1').fadeIn();
   });
-
-  
+   
   $('.fa-plus').on('click', function() {
     $('#overlay1, #modalWindow1').fadeOut();
   });

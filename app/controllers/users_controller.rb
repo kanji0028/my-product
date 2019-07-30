@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     
     @data_category = Post.where(user_id: current_user.id).group("category").sum(:price)
 
-
+    
     
     @data_mental = Post.where(user_id: current_user.id).group("mental").count
     
