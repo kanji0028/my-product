@@ -57,7 +57,9 @@
         %p 後悔
         %i.material-icons.large-size.red.emotion sentiment_very_dissatisfied  
         .int= number_to_percentage(@bad, precision: 1) 
-      %p.title.memo みんなのメモ
+      .title.memo
+        みんなのメモ
+        .material-icons chat
       .each-memo
         - @posts.each do |post|
           .each-memo__content= post.memo
