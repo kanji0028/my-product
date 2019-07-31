@@ -109,8 +109,11 @@
       &--other{
         background-color: rgb(180, 227, 233);
         height:35px;
-        padding-top: 5px;
-        line-height: 28px;
+        padding:5px 0 0 10px;
+        text-align: left;
+        .small-size{
+          color: gray;
+        }
       }
       &--list{
         display: inline-block;

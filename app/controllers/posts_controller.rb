@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @pie_chart = Post.where(user_id: current_user.id).group(:category).sum(:price)
     @line_chart = Post.where(user_id: current_user.id).group(:created_at).count
 
-
+    @like = Like.new
   end
 
   def new
@@ -34,6 +34,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @like = Like.new
   end
 
   def update
