@@ -20,37 +20,63 @@
             %i.material-icons.large-size
               =post.mental
           .post__element.date= post.created_at.strftime("%F")
+  
+  .right
+    .title.detail 詳細
+    .posts
+      .this-month
+        自分の出費
+        .this-month__yen
+          ¥
+          .this-month__costs=@this_month_sum.to_s(:delimited)
+      .line
+      .details
+        .details--material
+          %i.material-icons.large-size.icon restaurant
+          .details--material--font 食費
+          .details--material--price="¥"+@food.to_s(:delimited)
+          
+
+        .details--material
+          %i.material-icons.large-size shopping_cart
+          .details--material--font 日用品
+          .details--material--price="¥"+@cart.to_s(:delimited)
+
+
+      .details
+        .details--material
+          %i.material-icons.large-size train
+          .details--material--font 交通費
+          .details--material--price="¥"+@train.to_s(:delimited)
+
+        .details--material
+          %i.material-icons.large-size import_contacts
+          .details--material--font 書籍
+          .details--material--price="¥"+@import_contacts.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size card_travel
+          .details--material--font ファッション
+          .details--material--price="¥"+@card_travel.to_s(:delimited)
+
+        .details--material 
+          %i.material-icons.large-size directions_bike
+          .details--material--font 趣味・娯楽
+          .details--material--price="¥"+@bikes.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size payment
+          .details--material--font カード支払
+          .details--material--price="¥"+@payment.to_s(:delimited)
+
+        .details--material  
+          %i.material-icons.large-size star
+          .details--material--font その他
+          .details--material--price="¥"+@star.to_s(:delimited)
 
   .my-detail
-    .pie_chart=pie_chart @data_category , width: "800px", height: "300px", thousands: ","
-    
-    .line
-    
-    .bar_chart=bar_chart @data_mental , width: "600px", height: "300px"
-    
-    -# =bar_chart @data_day, width: "800px", height: "300px"
-
-
-    %canvas#myChart{:height => "400", :width => "900"}
-    :javascript
-      var ctx = document.getElementById("myChart").getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ["値段","値段","値段","値段"],
-              datasets: [{
-                  label: "サンプル",
-                  data: [ 10000,20000,13000,20000 ],
-                  backgroundColor: 'rgba(255, 99, 132, 1.0)',
-                  borderColor: 'rgba(255, 50, 132, 1.0)',
-                  fill: false
-              }]
-          },
-          options: {
-              title:  {
-                display: true,
-                text: "タイトル"
-              }
-          }
-      });
-
+    .pie_chart=pie_chart @data_category , width: "450px", height: "300px", thousands: ","
+    .line    
+    .bar_chart=bar_chart @data_mental , width: "450px", height: "300px"

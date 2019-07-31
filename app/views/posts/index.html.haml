@@ -44,10 +44,10 @@
     .title.detail 詳細
     .posts
       .this-month
-        今月の出費
+        自分の出費
         .this-month__yen
           ¥
-          .this-month__costs=@sum.to_s(:delimited)
+          .this-month__costs=@this_month_sum.to_s(:delimited)
       .line
       .details
         .details--material
