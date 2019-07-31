@@ -32,8 +32,9 @@
           %i.modal.material-icons.large-size.blue sentiment_very_satisfied
           %i.modal.material-icons.large-size.green sentiment_neutral
           %i.modal.material-icons.large-size.red sentiment_very_dissatisfied  
-        %button-model#close Close
-
+        .button-model#close Close
+      %a.header__logo.new-post{href: "/posts/new"} 入力する
+        
       %ul.header__list
         - if user_signed_in?
           %li
@@ -42,8 +43,6 @@
             %a.post{href: "/users/#{current_user.id}"} マイページ
           %li.header__list--avatar
             %a.image=image_tag current_user.avatar,size: "50x50"
-          %li
-            %a.post{href: "/posts/new"} 入力する
             .dropdown=current_user.email
         - else
           %li
