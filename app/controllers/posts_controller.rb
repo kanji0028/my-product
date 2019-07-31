@@ -5,9 +5,15 @@ class PostsController < ApplicationController
   def index
     @my_posts  = current_user.posts.includes(:user).order("created_at DESC") 
     @other_posts  = Post.where.not(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @posts  = Post.order("created_at DESC")
+
+    @good = Post.where(mental:'sentiment_very_satisfied').count.to_f / Post.count('mental').to_f * 100
+    @normal = Post.where(mental:'sentiment_neutral').count.to_f / Post.count('mental').to_f * 100
+    @bad = Post.where(mental:'sentiment_very_dissatisfied').count.to_f / Post.count('mental').to_f * 100
 
     @pie_chart = Post.where(user_id: current_user.id).group(:category).sum(:price)
     @line_chart = Post.where(user_id: current_user.id).group(:created_at).count
+
 
   end
 

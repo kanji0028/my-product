@@ -46,17 +46,21 @@
       .emotion
         %p 満足
         %i.material-icons.large-size.blue.emotion sentiment_very_satisfied
-        .int 40%
+        .int= number_to_percentage(@good, precision: 1) 
         %br
       .emotion
         %p 必要
         %i.material-icons.large-size.green.emotion sentiment_neutral
-        .int 40%
+        .int= number_to_percentage(@normal, precision: 1) 
         %br
       .emotion
         %p 後悔
         %i.material-icons.large-size.red.emotion sentiment_very_dissatisfied  
-        .int 40%
+        .int= number_to_percentage(@bad, precision: 1) 
+      %p.title.memo みんなのメモ
+      .each-memo
+        - @posts.each do |post|
+          .each-memo__content= post.memo
 
   .footer
     .notifications
