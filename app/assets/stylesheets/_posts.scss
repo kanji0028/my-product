@@ -108,12 +108,9 @@
       background-color: rgb(194, 241, 220);
       &--other{
         background-color: rgb(180, 227, 233);
-        height:35px;
-        padding:5px 0 0 10px;
-        text-align: left;
-        .small-size{
-          color: gray;
-        }
+        height:40px;
+        line-height: 40px;
+        position: relative;
       }
       &--list{
         display: inline-block;
@@ -153,6 +150,25 @@
       }
     }
   }
+}
+.small-size{
+  color: black;
+  display: inline;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease 0s;
+  &:hover{
+  color:gold;
+  transform: translateY(-0.1875em);  }
+}
+.button_to{
+  position: absolute;
+  margin-top: 5px;
+  display: inline-block;
+}
+.good-btn{
+  border-style: none;
+  background: none;
 }
 .footer{
   width: 100%;
