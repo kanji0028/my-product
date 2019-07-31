@@ -8,12 +8,7 @@
         .post
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
-            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
-            .post__top--list.fa-plus あああ
-            #overlay1
-            #modalWindow1
-              %p.modal--content 満足ですか？
-              %button#close1 Close
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, value:post.id ,class:".btn",data:{confirm:"本当に削除しますか？"}
 
           .post__element.icon
             %i.material-icons.large-size
