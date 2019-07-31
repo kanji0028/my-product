@@ -4,12 +4,12 @@
       = current_user.name
       の支出
     .posts
-      - @posts.each do |post|
-        -# - if user_signed_in? && current_user.id == post.user_id
+      - @my_posts.each do |post|
         .post
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
-            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn"
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
+
           .post__element.icon
             %i.material-icons.large-size
               =post.category
@@ -20,8 +20,62 @@
             %i.material-icons.large-size
               =post.mental
           .post__element.date= post.created_at.strftime("%F")
+  
+  .right
+    .title.detail 自分の出費
+    .posts
+      .total-yen="累計 ¥ "+@sum.to_s(:delimited)
+      .details
+        .details--material
+          %i.material-icons.large-size.icon restaurant
+          .details--material--font 食費
+          .details--material--price="¥"+@food.to_s(:delimited)
+          
+
+        .details--material
+          %i.material-icons.large-size shopping_cart
+          .details--material--font 日用品
+          .details--material--price="¥"+@cart.to_s(:delimited)
+
+
+      .details
+        .details--material
+          %i.material-icons.large-size train
+          .details--material--font 交通費
+          .details--material--price="¥"+@train.to_s(:delimited)
+
+        .details--material
+          %i.material-icons.large-size import_contacts
+          .details--material--font 書籍
+          .details--material--price="¥"+@import_contacts.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size card_travel
+          .details--material--font ファッション
+          .details--material--price="¥"+@card_travel.to_s(:delimited)
+
+        .details--material 
+          %i.material-icons.large-size directions_bike
+          .details--material--font 趣味・娯楽
+          .details--material--price="¥"+@bikes.to_s(:delimited)
+
+      .details
+        .details--material
+          %i.material-icons.large-size payment
+          .details--material--font カード支払
+          .details--material--price="¥"+@payment.to_s(:delimited)
+
+        .details--material  
+          %i.material-icons.large-size star
+          .details--material--font その他
+          .details--material--price="¥"+@star.to_s(:delimited)
+      .line
+      .total-yen.this_month="今月の出費 ¥ "+@this_month_sum.to_s(:delimited)
+      .total-yen.last_month="先月の出費 ¥ "+@last_month_sum.to_s(:delimited)
+
 
   .my-detail
-
-    -# %canvas#myChart{:height => "200", :width => "600"}
-    -# %canvas#myChart1{:height => "200", :width => "600"}
+    .pie_chart=pie_chart @data_category , width: "450px", height: "300px", thousands: ","
+    .line    
+    .bar_chart=bar_chart @data_mental , width: "450px", height: "300px"

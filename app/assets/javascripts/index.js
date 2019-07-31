@@ -1,13 +1,9 @@
 $(function() {
 
-  $("i:contains('restaurant')").on("mouseover mouseout",function(){
-    $(this).toggleClass("red");
-  });
-
   $("i:contains('sentiment_very_satisfied')").addClass("blue");
   $("i:contains('sentiment_neutral')").addClass("green");
   $("i:contains('sentiment_very_dissatisfied')").addClass("red");
-
+  
     $('.header__logo.help').on('click', function() {
       $('#overlay, #modalWindow').fadeIn();
     });
@@ -32,4 +28,12 @@ $(function() {
       });
     }
 
+});
+
+$(function(){
+  $(".notice").hide().fadeIn(1000);
+});
+
+$(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 3000);
 });

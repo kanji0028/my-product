@@ -1,11 +1,11 @@
 $(function() {
 
-  
-  $('.post__top--list.delete-a').on('click', function() {
-      $('#overlay1, #modalWindow1').fadeIn();
+  $('.fa-plus').on('click', function() {
+    $(this).siblings().fadeIn();
+    $('#overlay1, #modalWindow1').fadeIn();
   });
-
-  $('#close1').on('click', function() {
+   
+  $('.fa-plus').on('click', function() {
     $('#overlay1, #modalWindow1').fadeOut();
   });
 
@@ -24,5 +24,4 @@ $(function() {
       'top': ((h - ch) / 2) + 'px'
     });
   }
-
 });

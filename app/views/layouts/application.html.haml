@@ -5,6 +5,7 @@
     %title MyProduct
     = csrf_meta_tags
     = csp_meta_tag
+    = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
@@ -38,9 +39,12 @@
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li
-            %a.post{href: "/posts/new"} 入力する
-          %li
             %a.post{href: "/users/#{current_user.id}"} マイページ
+          %li.header__list--avatar
+            %a.image=image_tag current_user.avatar,size: "50x50"
+          %li
+            %a.post{href: "/posts/new"} 入力する
+            .dropdown=current_user.email
         - else
           %li
             = link_to "ログイン", new_user_session_path, class: 'post'

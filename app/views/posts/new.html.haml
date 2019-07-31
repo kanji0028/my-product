@@ -37,7 +37,7 @@
           その他
           = f.radio_button :category, "star" , class: "form-category"
       .form-group__price
-        = f.text_field :price, placeholder: "金額", class: "form-price",size: "30"
+        = f.text_field :price, placeholder: "金額", class: "form-price",size: "30",autocomplete: 'off'
       .form-group__mental
         %label
           %i.material-icons.large-size.blue sentiment_very_satisfied
@@ -49,7 +49,7 @@
           = f.radio_button :mental, "sentiment_neutral"
         %label
           %i.material-icons.large-size.red sentiment_very_dissatisfied  
-          不本意
+          後悔
           = f.radio_button :mental, "sentiment_very_dissatisfied"
       .form-group__memo
         = f.text_area :memo, placeholder: "メモ" ,size: "30x3"

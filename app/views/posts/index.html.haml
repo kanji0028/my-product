@@ -9,11 +9,11 @@
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
             .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
-            -# .post__top--list.delete-a あああ
-            -# #overlay1
-            -# #modalWindow1
-            -#   %p.modal--content 満足ですか？
-            -#   %button#close1 Close
+            .post__top--list.fa-plus あああ
+            #overlay1
+            #modalWindow1
+              %p.modal--content 満足ですか？
+              %button#close1 Close
 
           .post__element.icon
             %i.material-icons.large-size
@@ -31,7 +31,7 @@
     .posts
       - @other_posts.each do |post|
         .post
-          .post__top= post.user.name
+          .post__top--other= post.user&.name
           .post__element.icon
             %i.material-icons.large-size=post.category
           .post__element.amount¥
@@ -40,12 +40,29 @@
             %i.material-icons.large-size=post.mental
           .post__element.date= post.created_at.strftime("%F")
 
-  .right
-    .title.detail 詳細
+  .right__content
+    .title.all みんなの気持ち
     .posts
-      .this-month
-        今月の出費
-        .this-month__yen
-          ¥
-          .this-month__costs=@sum.to_s(:delimited)
-      .line
+      .emotion
+        %p 満足
+        %i.material-icons.large-size.blue.emotion sentiment_very_satisfied
+        .int= number_to_percentage(@good, precision: 1) 
+        %br
+      .emotion
+        %p 必要
+        %i.material-icons.large-size.green.emotion sentiment_neutral
+        .int= number_to_percentage(@normal, precision: 1) 
+        %br
+      .emotion
+        %p 後悔
+        %i.material-icons.large-size.red.emotion sentiment_very_dissatisfied  
+        .int= number_to_percentage(@bad, precision: 1) 
+      %p.title.memo みんなのメモ
+      .each-memo
+        - @posts.each do |post|
+          .each-memo__content= post.memo
+
+  .footer
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
