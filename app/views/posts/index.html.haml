@@ -40,60 +40,23 @@
             %i.material-icons.large-size=post.mental
           .post__element.date= post.created_at.strftime("%F")
 
-  .right
-    .title.detail 詳細
+  .right__content
+    .title.all みんなの気持ち
     .posts
-      .this-month
-        自分の出費
-        .this-month__yen
-          ¥
-          .this-month__costs=@this_month_sum.to_s(:delimited)
-      .line
-      .details
-        .details--material
-          %i.material-icons.large-size.icon restaurant
-          .details--material--font 食費
-          .details--material--price="¥"+@food.to_s(:delimited)
-          
-
-        .details--material
-          %i.material-icons.large-size shopping_cart
-          .details--material--font 日用品
-          .details--material--price="¥"+@cart.to_s(:delimited)
-
-
-      .details
-        .details--material
-          %i.material-icons.large-size train
-          .details--material--font 交通費
-          .details--material--price="¥"+@train.to_s(:delimited)
-
-        .details--material
-          %i.material-icons.large-size import_contacts
-          .details--material--font 書籍
-          .details--material--price="¥"+@import_contacts.to_s(:delimited)
-
-      .details
-        .details--material
-          %i.material-icons.large-size card_travel
-          .details--material--font ファッション
-          .details--material--price="¥"+@card_travel.to_s(:delimited)
-
-        .details--material 
-          %i.material-icons.large-size directions_bike
-          .details--material--font 趣味・娯楽
-          .details--material--price="¥"+@bikes.to_s(:delimited)
-
-      .details
-        .details--material
-          %i.material-icons.large-size payment
-          .details--material--font カード支払
-          .details--material--price="¥"+@payment.to_s(:delimited)
-
-        .details--material  
-          %i.material-icons.large-size star
-          .details--material--font その他
-          .details--material--price="¥"+@star.to_s(:delimited)
+      .emotion
+        %p 満足
+        %i.material-icons.large-size.blue.emotion sentiment_very_satisfied
+        .int 40%
+        %br
+      .emotion
+        %p 必要
+        %i.material-icons.large-size.green.emotion sentiment_neutral
+        .int 40%
+        %br
+      .emotion
+        %p 後悔
+        %i.material-icons.large-size.red.emotion sentiment_very_dissatisfied  
+        .int 40%
 
   .footer
     .notifications

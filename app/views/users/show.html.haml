@@ -22,14 +22,9 @@
           .post__element.date= post.created_at.strftime("%F")
   
   .right
-    .title.detail 詳細
+    .title.detail 自分の出費
     .posts
-      .this-month
-        自分の出費
-        .this-month__yen
-          ¥
-          .this-month__costs=@this_month_sum.to_s(:delimited)
-      .line
+      .total-yen="累計 ¥ "+@sum.to_s(:delimited)
       .details
         .details--material
           %i.material-icons.large-size.icon restaurant
@@ -75,6 +70,10 @@
           %i.material-icons.large-size star
           .details--material--font その他
           .details--material--price="¥"+@star.to_s(:delimited)
+      .line
+      .total-yen.this_month="今月の出費 ¥ "+@this_month_sum.to_s(:delimited)
+      .total-yen.last_month="先月の出費 ¥ "+@last_month_sum.to_s(:delimited)
+
 
   .my-detail
     .pie_chart=pie_chart @data_category , width: "450px", height: "300px", thousands: ","

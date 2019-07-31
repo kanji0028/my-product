@@ -45,28 +45,36 @@
   height: 700px;
   .left{
     width: 33%;
-    height: 700px;
+    height: 710px;
     float: left;
     background-color:rgb(150, 218, 190);
     margin-top: 60px;
   }
   .center{
     width: 33%;
-    height: 700px;
+    height: 710px;
     float: left;
     background-color: #9DDCDC;
     margin-top: 60px;
   }
   .right{
     width: 34%;
-    height: 700px;
+    height: 710px;
     float: left;
     background-color: #FFF4E1;
     margin-top: 60px;
   }
+  .right__content{
+    width: 34%;
+    height: 710px;
+    float: left;
+    background-color:#9DDCDC;
+    margin-top: 60px;  
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+  }
   .my-detail{
     width: 33%;
-    height: 700px;
+    height: 710px;
     float: right;
     background-color: #FFF4E1;
     margin-top: 60px;
@@ -79,7 +87,7 @@
 }
 .posts{
   width: 95%;
-  height: 600px;
+  height: 630px;
   background-color: white;
   margin: 5px auto;
   overflow: scroll;
@@ -165,7 +173,28 @@
 .material-icons.large-size{
   font-size:50px;
   margin:15px;
+  &.emotion{
+    font-size: 100px;
+    margin-bottom: 10px;
+    margin-right:15px;
+    
+  }
 }
+.emotion{
+  font-size:30px;
+  p{
+    float: left;
+    padding: 40px 0 0 30px;
+    color: gray;
+  }
+  .int{
+    font-size:40px;
+    float: right;
+    padding: 35px 40px 0 0;
+    margin-right: 90px;
+  }
+}
+
 .material-icons.large-size.blue{
   color: blue;
 }
@@ -179,16 +208,20 @@
 .pay{
   font-size: 25px;
 }
-.this-month{
-  font-size:25px;
-  padding: 10px 0 5px 20px;
-  &__yen{
-    margin: 0 auto;
-    text-align: center;
-    font-size: 40px;
+.total-yen{
+  font-size:35px;
+  font-weight: bold;
+  margin:15px 10px ;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32);/*影*/
+  white-space:nowrap;
+  background-color: rgb(219, 219, 219);
+  &.this_month{
+    background-color: #9DDCDC;
+    font-weight: normal;
   }
-  &__costs{ 
-    display: inline-block; 
+  &.last_month{
+    background-color: rgb(245, 240, 175);
+    font-weight: normal;
   }
 }
   
