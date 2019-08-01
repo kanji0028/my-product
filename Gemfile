@@ -74,3 +74,4 @@ gem 'chart-js-rails', '~> 0.1.4'
 gem 'mini_magick'
 gem 'groupdate'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'kaminari'
