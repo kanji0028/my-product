@@ -70,6 +70,10 @@
           %i.material-icons.large-size star
           .details--material--font その他
           .details--material--price="¥"+@star.to_s(:delimited)
+      .total-yen.detail
+        = link_to "詳細を見る" , "/users", method: :get, class:".btn" ,style: "color:black"
+
+
       .line
       .total-yen.this_month="今月の出費 ¥ "+@this_month_sum.to_s(:delimited)
       .total-yen.last_month="先月の出費 ¥ "+@last_month_sum.to_s(:delimited)

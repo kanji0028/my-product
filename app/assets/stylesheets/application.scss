@@ -52,7 +52,11 @@
     color: white;
 
     a{
-      color: black;
+      color: white;
+      font-weight: bold;
+      &:hover{
+        color: yellow;
+      }
     }
     
     li{

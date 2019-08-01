@@ -80,6 +80,36 @@
   }
 }
 
+.user-list{
+  width:60%;
+  text-align: center;
+  background-color: whitesmoke;
+  margin: 3px auto;
+  padding: 15px 0;
+  margin: 2em 0 2em 18em;
+  font-weight: bold;
+  border: solid 1.3px gray;
+  &__element{
+    display: inline-block;
+    padding:0 10px;
+    a{
+      color: black;
+      transition: all 1s linear 0s;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover{
+        transform: translateY(-0.3875em);
+        color: blue;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+
+
+
 
 .pie_chart{
   padding-bottom: 20px;
