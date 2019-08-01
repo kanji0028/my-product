@@ -36,6 +36,8 @@
     float: right;
     background-color: #FFF4E1;
     margin-top: 60px;
+    white-space:nowrap;
+    overflow:scroll;
   }
   .title{
     font-size: 20px;
@@ -64,16 +66,41 @@
       padding-top: 5px;
       line-height: 28px;
       background-color: rgb(194, 241, 220);
+      
       &--other{
         background-color: rgb(180, 227, 233);
         height:40px;
         line-height: 40px;
+        width: 100%;
         position: relative;
         p{
           float: left;
           padding-left: 15px;
         }
+        .small-size{
+          float: right;
+          color: gray;
+          font-weight: bold;
+          cursor: pointer;
+          padding-right: 10px;
+          transition: all 0.3s ease 0s;
+          &:hover{
+          color:gold;
+          transform: translateY(-0.1875em);  }
+        }
+        
+        .button_to{
+          position: absolute;
+          margin-top: 5px;
+          right: 10px;
+          display: inline-block;
+          .good-btn{
+            border-style: none;
+            background: none;
+          }
+        }
       }
+      
       &--list{
         display: inline-block;
         text-decoration: none;
@@ -144,7 +171,6 @@
     &:hover{
       transform: rotateY(360deg);
     }
-    
   }
 }
 .emotion{
@@ -273,4 +299,16 @@
   border-radius:10px;
   float: left;
   font:20px;
+}
+.material-icons.show{
+  float: left;
+  &__blue{
+    color: blue;
+  }
+  &__green{
+    color: green;
+  }
+  &__red{
+    color: red;
+  }
 }
