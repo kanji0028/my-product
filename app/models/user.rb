@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
+    #すでにいいねをしているのかどうかを判定already_liked?
   end
 
 end

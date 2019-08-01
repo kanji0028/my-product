@@ -1,0 +1,26 @@
+// Place all the styles related to the likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.small-size{
+  color: gray;
+  display: inline;
+  cursor: pointer;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: all 0.3s ease 0s;
+  &:hover{
+  color:gold;
+  transform: translateY(-0.1875em);  }
+}
+
+.button_to{
+  position: absolute;
+  margin-top: 5px;
+  right: -11px;
+  display: inline-block;
+  .good-btn{
+    border-style: none;
+    background: none;
+  }
+}

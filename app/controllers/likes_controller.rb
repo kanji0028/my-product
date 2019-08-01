@@ -2,7 +2,9 @@ class LikesController < ApplicationController
   
   def create
     @like = current_user.likes.create(post_id: params[:post_id])
-    redirect_to controller: :posts, action: :index
+    redirect_back(fallback_location: root_path)
+    # redirect_to controller: :posts, action: :index
+    #どっちでも一緒
   end
 
   def destroy

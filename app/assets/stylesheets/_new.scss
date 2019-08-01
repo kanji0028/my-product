@@ -1,0 +1,31 @@
+h2{
+  font-size: 25px;
+  text-align: center;
+}
+
+.form-group{
+font-size: 20px;
+text-align: center;
+margin: 10 auto;
+  &__price{
+    padding: 20px 0;
+  }
+  &__category{
+    padding: 20px 0;
+  }
+  &__mental{
+    padding: 20px 0;
+  }
+  &__memo{
+    padding: 20px 0;
+  }
+}
+.material-icons.large-size.blue{
+  color: blue;
+}
+.material-icons.large-size.green{
+  color: rgb(73, 179, 47);
+}
+.material-icons.large-size.red{
+  color: rgba(241, 4, 44, 0.863);
+}

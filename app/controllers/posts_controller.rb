@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
+    # Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
+    Post.create(post_params)
     flash[:notice] = '投稿できました！'
     redirect_to :root
   end
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:price, :category, :mental, :memo)
+    params.require(:post).permit(:price, :category, :mental, :memo).merge(user_id: current_user.id)
   end
 
   def move_to_index

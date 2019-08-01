@@ -1,50 +1,85 @@
-.account-page__inner.clearfix{
-  padding-top: 150px;
-  text-align: center;
-  h2 {
-      margin-bottom: 10px;
-      font-size: 30px;
-      font-weight: 200;
-  }
+#account-page{
+
 }
-.field {
-  margin-bottom: 30px;
-  font-size:15px;
-
-  .input{
-    width:200px;
-    text-align: center;
-    background-color: antiquewhite;
+.account-page__inner.clearfix{
+  padding-top: 130px;
+  background-color: rgb(253, 223, 199);
+  height: 650px;
+  width: 65%;
+  margin: 0 auto;
+  // 新規アカウント作成
+  h2 {
+      margin: 50px 0 80px 0;
+      float: left;
+      font-size: 40px;
+      width: 50%;
   }
-  .avatar{
-    width:300px;
-    text-align: center;
-    background-color: antiquewhite;
-    height: 30px;
-    padding-top: 15px;
+  // ログインボタン
+  a{
+    font-size: 20px;
+    text-decoration: none;
+    background-color: rgb(214, 222, 226);
+    color: black;
+    border-radius :6%;
+    box-shadow: 0 0 8px gray;
+    padding: 20px 40px;
+    &:hover{
+      color: white;
+      background-color: gray;
+    }
+    &.post{
+      background-color: rgb(212, 209, 209);
+      box-shadow: none;
+    }
   }
-
-  .field-label{
-    padding: 10px 0;
-    letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: 200;
-
-    i {
-      font-size: 11px;
+  // 入力項目一覧
+  .new_user{
+    width: 50%;
+    float: right;
+    .field {
+      margin-bottom: 30px;
+      font-size:18px;
+    
+      .input{
+        width:300px;
+        height:40px;
+        text-align: center;
+        background-color: white;
+      }
+      .avatar{
+        width:300px;
+        text-align: center;
+        background-color: white;
+        height: 30px;
+        padding-top: 15px;
+      }
+    
+      .field-label{
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 200;
+      }
+    }
+    .actions{
+      margin-top: 30px;
+      font-size: 30px;
+      .createuser{
+        box-shadow: 0 0 8px gray;
+        width:270px;
+        height: 80px;
+        background-color: rgb(127, 211, 250);
+        color: black;
+        border-radius :6%;
+        &:hover{
+          color: white;
+          background-color: gray;
+        }    
+      }
     }
   }
 }
-.actions{
-  margin-bottom: 30px;
-  font-size: 30px;
-  .createuser{
-    height: 40px;
-  }
-}
-.btn{
-  height: 150px;
-}
+
 
 .pie_chart{
   padding-bottom: 20px;

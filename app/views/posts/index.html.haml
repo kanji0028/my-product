@@ -27,14 +27,14 @@
       - @other_posts.each do |post|
         .post
           .post__top--other
-            = post.user&.name
+            %p= post.user&.name
             .small-size= post.likes.count
             - if current_user.already_liked?(post)
               = button_to "/posts/#{post.id}/likes/id", method: :delete , class: "good-btn" do
-                %a.material-icons.small-size favorite
+                %a.material-icons.small-size clear
             - else
-              = button_to "/posts/#{post.id}/likes", method: :post ,class: "good-btn" do
-                %a.material-icons.small-size favorite
+              = button_to "/posts/#{post.id}/likes",class: "good-btn"  do
+                %a.material-icons.small-size thumb_up
 
           .post__element.icon
             %i.material-icons.large-size=post.category
