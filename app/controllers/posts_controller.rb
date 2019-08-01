@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @pie_chart = Post.where(user_id: current_user.id).group(:category).sum(:price)
     @line_chart = Post.where(user_id: current_user.id).group(:created_at).count
 
-
+    @like = Like.new
   end
 
   def new
@@ -22,9 +22,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
+    # Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
+    Post.create(post_params)
     flash[:notice] = '投稿できました！'
-    redirect_to controller: :posts, action: :index
+    redirect_to :root
   end
 
   def destroy
@@ -34,16 +35,19 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    flash[:notice] = '内容を編集しました'
+    @like = Like.new
   end
 
   def update
     post = Post.find(params[:id])
     post.update(post_params) if post.user_id == current_user.id
+    redirect_to :root
   end
 
   private
   def post_params
-    params.require(:post).permit(:price, :category, :mental, :memo)
+    params.require(:post).permit(:price, :category, :mental, :memo).merge(user_id: current_user.id)
   end
 
   def move_to_index

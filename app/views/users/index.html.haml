@@ -1,0 +1,13 @@
+%br
+%br
+%br
+%br
+
+- @posts.each do |post|
+  .user-list
+    .user-list__element=post.price
+    .user-list__element=post.category
+    .user-list__element=post.memo
+    .user-list__element=post.created_at.strftime("%F")
+    %br
+= paginate(@posts)

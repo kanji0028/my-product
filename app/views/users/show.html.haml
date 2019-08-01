@@ -8,7 +8,7 @@
         .post
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
-            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, value:post.id ,class:".btn",data:{confirm:"本当に削除しますか？"}
 
           .post__element.icon
             %i.material-icons.large-size
@@ -70,6 +70,10 @@
           %i.material-icons.large-size star
           .details--material--font その他
           .details--material--price="¥"+@star.to_s(:delimited)
+      .total-yen.detail
+        = link_to "詳細を見る" , "/users", method: :get, class:".btn" ,style: "color:black"
+
+
       .line
       .total-yen.this_month="今月の出費 ¥ "+@this_month_sum.to_s(:delimited)
       .total-yen.last_month="先月の出費 ¥ "+@last_month_sum.to_s(:delimited)
@@ -79,3 +83,9 @@
     .pie_chart=pie_chart @data_category , width: "450px", height: "300px", thousands: ","
     .line    
     .bar_chart=bar_chart @data_mental , width: "450px", height: "300px"
+    %i.material-icons.show__blue sentiment_very_satisfied
+    sentiment_very_satisfied
+    %i.material-icons.show__green sentiment_neutral
+    sentiment_neutral
+    %i.material-icons.show__red sentiment_very_dissatisfied
+    sentiment_very_dissatisfied

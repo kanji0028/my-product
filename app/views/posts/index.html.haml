@@ -8,12 +8,7 @@
         .post
           .post__top 
             .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
-            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, class:".btn",data:{confirm:"ok"}
-            .post__top--list.fa-plus あああ
-            #overlay1
-            #modalWindow1
-              %p.modal--content 満足ですか？
-              %button#close1 Close
+            .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, value:post.id ,class:".btn",data:{confirm:"本当に削除しますか？"}
 
           .post__element.icon
             %i.material-icons.large-size
@@ -31,7 +26,16 @@
     .posts
       - @other_posts.each do |post|
         .post
-          .post__top--other= post.user&.name
+          .post__top--other
+            %p= post.user&.name
+            .small-size= post.likes.count
+            - if current_user.already_liked?(post)
+              = button_to "/posts/#{post.id}/likes/id", method: :delete , class: "good-btn" do
+                %a.material-icons.small-size thumb_up
+            - else
+              = button_to "/posts/#{post.id}/likes",class: "good-btn"  do
+                %a.material-icons.small-size thumb_up
+
           .post__element.icon
             %i.material-icons.large-size=post.category
           .post__element.amount¥
@@ -57,7 +61,9 @@
         %p 後悔
         %i.material-icons.large-size.red.emotion sentiment_very_dissatisfied  
         .int= number_to_percentage(@bad, precision: 1) 
-      %p.title.memo みんなのメモ
+      .title.memo
+        みんなのメモ
+        .material-icons chat
       .each-memo
         - @posts.each do |post|
           .each-memo__content= post.memo
