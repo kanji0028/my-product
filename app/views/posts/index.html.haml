@@ -29,13 +29,7 @@
           .post__top--other
             %p= post.user&.name
             .small-size= post.likes.count
-            - if current_user.already_liked?(post)
-              = button_to "/posts/#{post.id}/likes/id", method: :delete , class: "good-btn" do
-                %a.material-icons.small-size thumb_up
-            - else
-              = button_to "/posts/#{post.id}/likes",class: "good-btn"  do
-                %a.material-icons.small-size thumb_up
-
+            =render partial:'likes/like', locals:{post:post}
           .post__element.icon
             %i.material-icons.large-size=post.category
           .post__element.amount¥

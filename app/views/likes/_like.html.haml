@@ -1,0 +1,6 @@
+- if current_user.already_liked?(post)
+  = button_to "/posts/#{post.id}/likes/id", method: :delete , class: "good-btn delete"  do
+    %a.material-icons.small-size thumb_up
+- else
+  = button_to "/posts/#{post.id}/likes",class: "good-btn delete"  do
+    %a.material-icons.small-size thumb_up
