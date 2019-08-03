@@ -1,0 +1,21 @@
+.left
+  .title.person
+    = current_user.name
+    の支出
+  .posts
+    - @my_posts.each do |post|
+      .post
+        .post__top 
+          .post__top--list.edit= link_to "編集", "/posts/#{post.id}/edit", method: :get, class:".btn"
+          .post__top--list.delete= link_to "削除", "/posts/#{post.id}", method: :delete, value:post.id ,class:".btn",data:{confirm:"本当に削除しますか？"}
+
+        .post__element.icon
+          %i.material-icons.large-size
+            =post.category
+        .post__element.amount¥
+        .post__element.pay
+          = post.price.to_s(:delimited)
+        .post__element.face
+          %i.material-icons.large-size
+            =post.mental
+        .post__element.date= post.created_at.strftime("%F")
