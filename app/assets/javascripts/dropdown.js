@@ -1,10 +1,12 @@
-$(function(){
-  $('.dropdown').hide();
-
-  $('img').hover(function(){
+$(document).on('turbolinks:load',function(){
+  
+    $('.dropdown').hide();
+    
+    $('img').hover(function(){
+      debugger;
       $(".dropdown",).fadeIn();
-  }, function(){
+    }, function(){
       $(".dropdown").fadeOut();
-  });
+    });
+  
 });
-

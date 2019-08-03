@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @bikes = Post.where(user_id: current_user.id).where(category: 'directions_bike').sum(:price)
     @payment = Post.where(user_id: current_user.id).where(category: 'payment').sum(:price)
     @star = Post.where(user_id: current_user.id).where(category: 'star').sum(:price)
+    binding.pry
   end
 
   def index
