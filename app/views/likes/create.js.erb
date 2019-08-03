@@ -1,0 +1,3 @@
+$('.small-size<%= @post.likes.count %>').html("<%= j(render render partial:'likes/like', locals:{post:post}) %>");
+
+<%# https://qiita.com/shiro-kuro/items/f017dce3d199f06d1dcd %>

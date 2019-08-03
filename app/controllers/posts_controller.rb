@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # Post.create(price: post_params[:price], category: post_params[:category], mental: post_params[:mental], memo: post_params[:memo], user_id: current_user.id)
     Post.create(post_params)
     flash[:notice] = '投稿できました！'
     redirect_to :root
