@@ -1,0 +1,1 @@
+$('.small-size<%= @post.likes.count %>').html("<%= j(render render partial:'likes/like', locals:{post:post}) %>");

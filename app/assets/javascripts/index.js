@@ -1,9 +1,5 @@
-$(function() {
-
-  $("i:contains('sentiment_very_satisfied')").addClass("blue");
-  $("i:contains('sentiment_neutral')").addClass("green");
-  $("i:contains('sentiment_very_dissatisfied')").addClass("red");
-  
+// 使い方モーダル画面
+$(function() {  
     $('.header__logo.help').on('click', function() {
       $('#overlay, #modalWindow').fadeIn();
     });
@@ -27,13 +23,15 @@ $(function() {
         'top': ((h - ch) / 2) + 'px'
       });
     }
+});
 
+$(document).on('turbolinks:load',function(){
+  $("i:contains('sentiment_very_satisfied')").addClass("blue");
+  $("i:contains('sentiment_neutral')").addClass("green");
+  $("i:contains('sentiment_very_dissatisfied')").addClass("red");
 });
 
 $(function(){
   $(".notice").hide().fadeIn(1000);
-});
-
-$(function(){
   setTimeout("$('.notice').fadeOut('slow')", 3000);
 });
