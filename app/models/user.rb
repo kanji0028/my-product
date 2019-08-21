@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
 
+  validates :name, presence: true
+  #空でないこと
+
   has_one_attached :avatar
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
