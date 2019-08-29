@@ -5,10 +5,10 @@ describe User do
 
   it "is valid with a name, email, password, password_confirmation" do
     user = build(:user)
-    expect(user).to be_valid
+    expect(user).to be_valid #引数にしたインスタンスが全てのバリデーションをクリアする場合
   end
 
-  it "is invalid without a name" do
+  it "is invalid without a name" do #nameなしでは無効
       user = build(:user, name:"")
       user.valid?
       expect(user.errors[:name]).to include("can't be blank")

@@ -37,7 +37,7 @@
           その他
           = f.radio_button :category, "star" , class: "form-category"
       .form-group__price
-        = f.text_field :price, placeholder: "金額", class: "form-price",size: "30"
+        = f.text_field :price, placeholder: "金額", class: "form-price",size: "30", required: "true"
       .form-group__mental
         %label
           %i.material-icons.large-size.blue sentiment_very_satisfied
