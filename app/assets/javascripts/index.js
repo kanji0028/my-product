@@ -1,5 +1,6 @@
 // 使い方モーダル画面
-$(function() {  
+$(document).on('turbolinks:load',function(){
+
     $('.header__logo.help').on('click', function() {
       $('#overlay, #modalWindow').fadeIn();
     });

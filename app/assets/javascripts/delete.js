@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
 
   $(".blue.emotion").click(function(){
     // "success" "warning" "error" "info" の４種類のアイコンがある
