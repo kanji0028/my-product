@@ -6,7 +6,7 @@
         %label
           %i.material-icons.large-size restaurant
           食費
-          = f.radio_button :category, "restaurant" , class: "form-category" 
+          = f.radio_button :category, "restaurant" , class: "form-category" ,checked:"checked"
         %label
           %i.material-icons.large-size shopping_cart
           日用品
@@ -42,7 +42,7 @@
         %label
           %i.material-icons.large-size.blue sentiment_very_satisfied
           満足
-          = f.radio_button :mental, "sentiment_very_satisfied",class: ".blue"
+          = f.radio_button :mental, "sentiment_very_satisfied",class: ".blue",checked:"checked"
         %label
           %i.material-icons.large-size.green sentiment_neutral
           必要

@@ -8,6 +8,7 @@
     = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
   %body
     %nav.header
@@ -51,12 +52,3 @@
             = link_to "新規登録", new_user_registration_path, class: 'post'
 
     = yield
-
-    -# .wrapper
-    -#   .box-wrap
-    -#     .box.one
-    -#     .box.two
-    -#     .box.three
-    -#     .box.four
-    -#     .box.five
-    -#     .box.six

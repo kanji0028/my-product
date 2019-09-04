@@ -1,6 +1,11 @@
 #account-page
   .account-page__inner.clearfix
-    %h2 ログイン
+    .login-box
+      %h2 ログイン
+      %li= link_to "新規登録する",  new_user_registration_path, class: 'post'
+      %li or
+      %li= link_to "パスワードをお忘れの方",  new_user_password_path, class: 'post'
+
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
         = f.label :name
@@ -22,10 +27,3 @@
         = f.submit "ログインする",class:"createuser"
     -# = render "devise/shared/links"
     -# = render "devise/shared/links"
-    = link_to "新規登録する",  new_user_registration_path, class: 'post'
-    %br
-    %br
-    or
-    %br/
-    %br/
-    = link_to "パスワードをお忘れの方",  new_user_password_path, class: 'post'
